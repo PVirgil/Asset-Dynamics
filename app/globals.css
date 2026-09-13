@@ -123,7 +123,7 @@ select {
 
 /* Avoid mobile browsers shrinking form typography,
    which can also alter control height */
-@media (max-width: 1024px) {
+@media (max-width: 1300px) {
   input,
   textarea,
   select {
