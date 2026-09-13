@@ -193,7 +193,7 @@ export default function DynamicsLab() {
             <div><h2>Model</h2><p>Names become variables. Formulas can reference any earlier or resolvable node.</p></div>
             <div className="mini-actions">
               <button onClick={()=>addNode("input")}>+ Input</button>
-              <button onClick={()=>addNode("formula")}>+ Formula</button>
+              <button onClick={()=>addNode("formula")}>+ Rule</button>
             </div>
           </div>
 
