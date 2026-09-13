@@ -77,6 +77,66 @@ h1 { font-size: clamp(38px, 6vw, 72px); line-height:.96; margin:10px 0 16px; let
 .lesson strong { font-size:13px; }
 .lesson p { color:var(--muted); line-height:1.5; font-size:12px; margin:4px 0 0; }
 footer { display:flex; justify-content:space-between; color:#65707c; font-size:11px; padding:20px 4px 0; gap:12px; }
+
+/* =========================================================
+   Mobile / iPad form-control fixes
+   ========================================================= */
+
+/* Keep the Sensitivity dropdowns large enough for touch
+   and prevent iPad/Safari from visually crushing them. */
+.pair select {
+  min-height: 48px;
+  height: 48px;
+  line-height: 1.2;
+
+  color: #ffffff;
+  caret-color: #ffffff;
+
+  /* Remove native browser arrow so its color can't change */
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* Custom permanently-white dropdown arrow */
+  background-color: #0d1116;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px 8px;
+
+  /* Leave room for the custom arrow */
+  padding-right: 40px;
+}
+
+/* Keep text-entry caret white everywhere */
+input,
+textarea,
+select {
+  caret-color: #ffffff;
+}
+
+/* iOS / iPadOS Safari sometimes applies its own text treatment */
+input,
+textarea,
+select {
+  -webkit-text-fill-color: #ffffff;
+}
+
+/* Avoid mobile browsers shrinking form typography,
+   which can also alter control height */
+@media (max-width: 1024px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+    min-height: 48px;
+  }
+
+  .pair select {
+    min-height: 48px;
+    height: 48px;
+  }
+}
+
 @media (max-width: 900px) {
   .layout { grid-template-columns:1fr; }
   .fields { grid-template-columns:1fr 1fr; }
